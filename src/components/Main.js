@@ -94,7 +94,7 @@ const Main = () => {
     },
     {
       id: 8,
-      name: 'HCL',
+      name: 'HCLs',
       status: 'Approved',
       regularHours: '43:00',
       totalHours: '43:00',
@@ -157,6 +157,7 @@ const Main = () => {
       <View style={styles.listContainer}>
         {filteredCompanyData.length ? (
           <FlatList
+            // style={{flex: 1}}
             data={filteredCompanyData}
             showsVerticalScrollIndicator={false}
             keyExtractor={item => item.id}
@@ -191,8 +192,30 @@ const Main = () => {
                       {/* <View style={{backgroundColor: 'blue', height: '100%'}}>
                   <Text style={styles.statusText}>{item.status}</Text>
                 </View> */}
-
+                      <Text
+                        style={{
+                          width: 14,
+                          fontSize: 11,
+                          backgroundColor: `${getStatusColor(item.status)}`,
+                          height: '100%',
+                          color: 'white',
+                          // flex: 1,
+                        }}>
+                        {item.status}
+                      </Text>
                       <View style={styles.mainCard}>
+                        {/* <View>
+                          <Text
+                            style={{
+                              // transform: [{rotate: '90deg'}],
+                              // padding: 15,
+                              width: '100%',
+                              // height: '100%',
+                              backgroundColor: `${getStatusColor(item.status)}`,
+                            }}>
+                            {item.status}
+                          </Text>
+                        </View> */}
                         <View>
                           <Text style={{color: setTextColor(item.id)}}>
                             {item.name}
@@ -267,10 +290,12 @@ export default Main;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingBottom: 190,
   },
   listContainer: {
+    // flex: 1,
     padding: 12,
-    // margin: 12,
+    paddingBottom: 170,
   },
   card: {
     height: 70,

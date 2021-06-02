@@ -28,7 +28,7 @@ const Login = ({navigation}) => {
     <View style={styles.container}>
       <View>
         <View style={styles.inputContainer}>
-          <View style={styles.placeholderIcon}>
+          <View style={[styles.placeholderIcon, {marginRight: 24}]}>
             <Icon name="user" size={26} color="grey" />
           </View>
           <TextInput
@@ -39,7 +39,7 @@ const Login = ({navigation}) => {
           />
         </View>
         <View style={styles.inputContainer}>
-          <View style={styles.placeholderIcon}>
+          <View style={[styles.placeholderIcon, {marginRight: 17}]}>
             <MaterialIcon name="vpn-key" size={26} color="grey" />
           </View>
           <TextInput
